@@ -1,0 +1,76 @@
+<section id="title-cont">
+  <div class="clearfix rope">
+    <div class="rope">
+      <img src="assets/img/rope.png" />
+    </div>
+  </div>
+  <div class="title-cont">
+    <p>Menu</p>
+  </div>
+</section>
+
+<section id="content">
+
+  <div class="fluid900">
+
+    <!-- Submenu -->
+    <div id="submenu">
+      <ul class="submenu-cont clearfix">
+        <li><a class="tablinks" onclick="openMenu(event, '1')">Main Menu</a></li>
+        <li><a class="tablinks" onclick="openMenu(event, '2')">Fried Menu</a></li>
+        <li><a class="tablinks" onclick="openMenu(event, '3')">Soup & Sukiyaki</a></li>
+        <li><a class="tablinks" onclick="openMenu(event, '4')">Desserts</a></li>
+        <li><a class="tablinks" onclick="openMenu(event, '5')">Beverages</a></li>
+        <li><a class="tablinks" onclick="openMenu(event, '6')">Snacks</a></li>
+        <li><a class="tablinks" onclick="openMenu(event, '7')">Side Dish</a></li>
+        <li><a class="tablinks" onclick="openMenu(event, '8')">Set Menu</a></li>
+      </ul>
+    </div>
+
+    <!-- Content tab -->
+    <div class="ourmenu" style="text-align: center;">
+      <img src="assets/img/our menu.png"/>
+      <!-- <input type="submit" class="input-pesan" value="Order" (click)="test()"/> -->
+    </div>
+
+    <!-- <ul class="clearfix tabcontent" *ngFor="let category of allcategory" id={{category.id_category}}>
+      <div *ngFor="let menu of allmenu">
+        <li class="grid-3 text-center left" *ngIf="menu.id_category == category.id_category">
+          <a [routerLink]="['/menu/detail', menu.name]">
+            <div>
+              <img class='img_menu' width='236px'  src={{menu.image}} />
+            </div>
+          </a>
+          <div class="descgrid">
+            <p><strong>{{menu.name}}</strong></p>
+            <p class="red">Rp {{menu.price}}</p>
+
+            <span class="readmore" style="padding-right : 1.8em"><a [routerLink]="['/menu/detail', menu.name]">Detail</a></span>
+            <input type="submit" class="input-pesan" value="Order" (click)="addToOrder(menu)"/>
+          </div>
+        </li>
+      </div>
+    </ul> -->
+    <div *ngIf="jsonMenu && jsonKategori">
+      <ul class="clearfix tabcontent" *ngFor="let kategory of jsonKategori" id={{kategory.id_kategori}}>
+        <div *ngFor="let menu of jsonMenu.results">
+          <li class="grid-3 text-center left" *ngIf="menu.id_kategori.id_kategori == kategory.id_kategori">
+            <a [routerLink]="['/menu/detail', menu.nama_menu]">
+              <div>
+                <img class='img_menu' width='236px'  src={{menu.gambar_menu}} />
+              </div>
+            </a>
+            <div class="descgrid">
+              <p><strong>{{menu.nama_menu}}</strong></p>
+              <p class="red">Rp {{menu.harga_menu}}</p>
+
+              <span class="readmore" style="padding-right : 1.8em"><a [routerLink]="['/menu/detail', menu.nama_menu]">Detail</a></span>
+              <input type="submit" class="input-pesan" value="Order" (click)="addToOrder(menu)"/>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+  </div>
+</section>

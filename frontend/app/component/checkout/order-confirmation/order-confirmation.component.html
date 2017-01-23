@@ -1,0 +1,113 @@
+<section id="title-cont">
+  <div class="clearfix rope">
+    <div class="rope">
+      <img src="assets/img/rope.png" />
+    </div>
+  </div>
+  <div class="title-cont">
+    <p>Order Confirmation </p>
+  </div>
+</section>
+<section id="content" class="relative padbot-50">
+  <div class="fluid900" >
+
+
+
+    <div id="breadcumbs" class="clearfix marbot-30">
+
+      <div class="grid_bread bread-cont step-active">
+        <div class="text-center">
+          <img class="imgact" src="assets/img/confirmation/step1act.png" />
+          <img src="assets/img/confirmation/step1.png" />
+        </div>
+      </div>
+
+      <div class="grid_bread bread-cont ">
+        <div class="text-center">
+          <img class="imgact" src="assets/img/confirmation/step2act.png" />
+          <img src="assets/img/confirmation/step2.png" />
+        </div>
+      </div>
+
+      <div class="grid_bread bread-cont ">
+        <div class="text-center">
+          <img class="imgact" src="assets/img/confirmation/step3act.png" />
+          <img src="assets/img/confirmation/step3.png" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="clearfix marbot-30"><a href="back" (click)="goBack()">&laquo; Back to Menu</a></div>
+    <!-- BEGIN Konfirmasi -->
+    <div class="clearfix" style="padding-bottom: 150px;">
+      <div class="grid-konhead clearfix text-center">
+        <div class="clearfix">
+          <table width="100%">
+            <tr>
+              <td width="33%">Your Order</td>
+              <td width="33%">Quantity</td>
+              <td width="33%">Price</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid-konhead clearfix">
+        <div class="clearfix">
+          <table width="100%">
+            <tr *ngFor="let order of allorder">
+              <td width="18%" class="text-left thumb-konf"><img width="137"src={{order.menu.image}}/></td>
+              <td width="31%" class="alignmiddle red" class="product">{{order.menu.name}}</td>
+              <td width="3%" class="alignmiddle red text-center">{{order.quantity}}</td>
+              <td width="18%" class="alignmiddle red">
+                <a style="cursor: pointer;" (click)="decreaseQuantity(order.menu)"><img src="assets/img/confirmation/down.png" /></a>
+                <a style="cursor: pointer;" (click)="increaseQuantity(order.menu)"><img src="assets/img/confirmation/up.png" /></a>
+              </td>
+              <td width="19%" class="alignmiddle red">Rp {{order.menu.price*order.quantity}}</td>
+              <td width="10%" class="alignmiddle red">
+                <a style="cursor: pointer;" (click)="removeItem(order.menu)" class="conf-remove"><img src="assets/img/confirmation/remove.png" /></a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="disclaimer martop-10">
+        <ul>
+          <li>All prices include taxes.</li>
+        </ul>
+      </div>
+      <div class="grid-konhead clearfix bornon">
+        <div class="clearfix">
+          <table width="100%" id="subtotal">
+            <tr>
+              <td width="23%" colspan="3" class="text-left"></td>
+              <td width="27%" class="alignmiddle"></td>
+              <td width="21%" class="alignmiddle"><strong>Subtotal</strong></td>
+              <td width="29%" class="alignmiddle red">Rp {{subTotal}}</td>
+            </tr>
+            <tr>
+              <td class="text-left" colspan="3"></td>
+              <td class="alignmiddle"></td>
+              <td class="alignmiddle"><strong>Delivery Cost</strong></td>
+              <td class="alignmiddle red">Rp 15000</td>
+            </tr>
+            <tr>
+              <td class="text-left" colspan="3"></td>
+              <td class="alignmiddle"></td>
+              <td class="alignmiddle"><strong>Total</strong></td>
+              <td class="alignmiddle red">
+                <strong>Rp {{subTotal+15000}}</strong>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="clearfix text-right">
+        <input type="submit" value="Process" class="btn-confirm" (click)="goAddresConfirmation()">
+      </div>
+    </div> <!-- END Konfirmasi -->
+    <!-- Silakan pilih menu -->
+  </div>
+</section>

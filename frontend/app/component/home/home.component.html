@@ -1,0 +1,29 @@
+
+<section id="title-cont">
+  <div class="clearfix rope">
+    <div class="rope">
+      <img src="assets/img/rope.png" />
+    </div>
+  </div>
+  <div class="title-cont">
+    <p>RECOMMENDATION</p>
+  </div>
+</section>
+
+
+<section id="content" class="home_radius">
+
+  <!-- Content -->
+  <div class="fluid1000">
+    <div class="text-center clearfix">
+      <div *ngFor="let recomendation of allrecomendation" class="grid-3 inline text-center">
+        <a [routerLink]="['/menu/detail', recomendation.name]"><img src={{recomendation.image}}/>
+        </a>
+        <h3>{{recomendation.name}}</h3>
+        <p>
+          <input type="submit" class="input-pesan" value="Order" (click)="addToOrder(recomendation)"/>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

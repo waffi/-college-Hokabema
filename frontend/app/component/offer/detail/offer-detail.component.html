@@ -1,0 +1,38 @@
+
+<section id="title-cont">
+  <div class="clearfix rope">
+    <div class="rope">
+      <img src="./assets/img/rope.png" />
+    </div>
+  </div>
+  <div class="title-cont">
+    <p>Special Offer</p>
+  </div>
+</section>
+
+<section id="content">
+
+  <!-- Content -->
+  <div class="fluid1000" *ngIf="offer">
+    <div class="clearfix marbot-30"><a href="back" (click)="goBack()">&laquo; Back to Offer</a></div>
+    <div class="marbot-30 text-center">
+      <div class="rslides_container">
+        <ul id="slidescurve" class="rslides">
+          <li>
+            <img src={{offer.image_2}}/>
+          </li>
+        </ul>
+      </div>
+      <h4 class="marbot-20">{{offer.name}}</h4>
+    </div>
+
+    <div class="clearfix">
+      <div class="post">
+        <p class="tw-data-text tw-ta tw-text-small" style="text-align: center; height: 120px;">{{offer.description}}</p>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>

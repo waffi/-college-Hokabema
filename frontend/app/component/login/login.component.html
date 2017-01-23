@@ -1,0 +1,20 @@
+<div *ngIf="json1">{{json1}}</div>
+<div *ngIf="json2">{{json2}}</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="modalbox" style="height:475px">
+  <div class="modal-cont">
+    <p class="text-center martop-10">Please enter your details</p>
+    <form>
+      <input [(ngModel)]="customer.username" type="text" required="required" name="username" placeholder="Username" />
+      <input [(ngModel)]="customer.password" type="password" required="required" name="password" placeholder="Password" />
+      <div>
+        <a class="link-forgot" href="forgot">Forgot Password?</a>
+      </div>
+      <input (click)="login()" type="submit" value="Login"/>
+    </form>
+  </div>
+</div>

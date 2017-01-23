@@ -1,0 +1,79 @@
+<header id="header" class="clearfix">
+  <div class="clearfix fluidhead">
+    <div class="right text-right bilingual">
+      <p *ngIf="status === false" class="right">
+          Login first !
+      </p>
+    </div>
+  </div>
+</header>
+<nav id="subhead">
+  <div class="fluidhead clearfix">
+                    <div class="logo">
+                        <h1><a routerLink="/home" routerLinkActive="active" title="Hokebema">Hokebema</a></h1>
+                    </div>
+                    <div class="logo2 clearfix">
+                        <h1>
+                            <a routerLink="/home" routerLinkActive="active" title="Hokebema">
+                                <img src="assets/img/logo.png" />
+                            </a>
+                        </h1>
+                    </div>
+  </div>
+  <div class="fluidhead clearfix">
+    <nav id="mainmenu">
+      <ul *ngIf="status === true" class="clearfix">
+        <li>
+          <a class="mnlist" routerLink="/home" routerLinkActive="active">HOME</a>
+        </li>
+        <li>
+          <a class="mnlist" routerLink="/menu" routerLinkActive="active">MENU</a>
+        </li>
+        <li>
+          <a class="mnlist"routerLink="/offer" routerLinkActive="active">SPECIAL OFFER</a>
+        </li>
+        <li>
+          <a class="btn-link btn-head" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a routerLink="/checkout/order-confirmation" routerLinkActive="active">
+      <div *ngIf="status === true" class="checkout_new" id="cart">
+        <span class="new_bag">{{allorder.length}}</span>
+      </div>
+    </a>
+
+    <!-- END Dropdown Cart Container -->
+
+  </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>
+
+<footer id="footer" class="clearfix text-center full-grid">
+  <!-- Background footer -->
+  <div class="bgfooter_l"></div>
+  <div class="bgfooter_r"></div>
+
+  <div class="fluidhead clearfix">
+    <div class="left grid-3-foot">
+      <div class="clearfix">
+        <img class="halal left" src="assets/img/halal.png" />
+      </div>
+    </div>
+    <div class="left grid-3-foot text-center">
+
+    </div>
+    <div class="left grid-3-foot text-right">
+      <p>
+        <span>FIND MORE FUN HERE</span>
+        <a class="icosoc fbsoc" href="#" target="_blank" title="Facebook"></a>&nbsp;
+        <a class="icosoc twsoc" href="#" target="_blank" title="Twitter"></a>&nbsp;
+        <a class="icosoc ytsoc" href="#" target="_blank" title="Youtube"></a>
+      </p>
+    </div>
+  </div>
+</footer>

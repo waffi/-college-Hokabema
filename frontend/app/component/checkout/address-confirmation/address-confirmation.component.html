@@ -1,0 +1,115 @@
+
+<section id="title-cont">
+  <div class="clearfix rope">
+    <div class="rope">
+      <img src="assets/img/rope.png" />
+    </div>
+  </div>
+  <div class="title-cont">
+    <p>Address Confirmation</p>
+  </div>
+</section>
+
+
+<section id="content" class="relative padbot-50">
+  <div class="fluid900" >
+    <div id="breadcumbs" class="clearfix marbot-30">
+
+      <div class="grid_bread bread-cont step-active">
+        <div class="text-center">
+          <img class="imgact" src="assets/img/confirmation/step1act.png" />
+          <img src="assets/img/confirmation/step1.png" />
+        </div>
+      </div>
+
+      <div class="grid_bread bread-cont step-active">
+        <div class="text-center">
+          <img class="imgact" src="assets/img/confirmation/step2act.png" />
+          <img src="assets/img/confirmation/step2.png" />
+        </div>
+      </div>
+
+      <div class="grid_bread bread-cont ">
+        <div class="text-center">
+          <img class="imgact" src="assets/img/confirmation/step3act.png" />
+          <img src="assets/img/confirmation/step3.png" />
+        </div>
+      </div>
+
+    </div>
+    <div class="clearfix marbot-30"><a href="back" (click)="goBack()">&laquo; Back to Menu</a></div>
+    <div class="clearfix text-center padbot-30 marbot-30 borbot introcheck">
+      <p>Double check all your shipping information is correct. Please fill in the following data.</p>
+      </div>
+      <form accept-charset="utf-8">
+        <div class="clearfix marbot-20 selectcheck">
+        <div class="clearfix">
+          <table width="100%" id="regform">
+            <tr>
+              <td width="30%">Name</td>
+              <td width="70%">
+                <input type="text" required="required" name="order_name" value=""/>
+              </td>
+            </tr>
+            <tr>
+              <td width="30%">Email</td>
+              <td width="70%">
+                <input type="text" required="required" name="order_email"value=""/>
+              </td>
+            </tr>
+            <tr>
+              <td width="30%">Phone</td>
+              <td width="70%">
+                <input type="text" required="required" name="order_phone"  onkeypress="return isNumberKey(event)" value=""/>
+              </td>
+            </tr>
+            <tr>
+              <td width="30%">City</td>
+              <td width="70%">
+                <select name="city" required="required">
+                  <option  value="1">Bandung</option>
+                  <option  value="2">Bekasi</option>
+                  <option  value="3">Bogor</option>
+                  <option  value="21">Cilegon</option>
+                  <option  value="4">Cirebon</option>
+                  <option  value="5">Denpasar</option>
+                  <option  value="6">Depok</option>
+                  <option  value="7">Jakarta Barat</option>
+                  <option  value="8">Jakarta Pusat</option>
+                  <option  value="9">Jakarta Selatan</option>
+                  <option  value="10">Jakarta Timur</option>
+                  <option  value="11">Jakarta Utara</option>
+                  <option  value="12">Karawang</option>
+                  <option  value="13">Malang</option>
+                  <option  value="14">Semarang</option>
+                  <option  value="15">Serang</option>
+                  <option  value="22">Sidoarjo</option>
+                  <option  value="16">Solo</option>
+                  <option  value="17">Surabaya</option>
+                  <option  value="18">Tangerang</option>
+                  <option  value="19">Tasikmalaya</option>
+                  <option  value="20">Yogyakarta</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Detail Address</td>
+              <td>
+                <textarea required="required" name="address" placeholder=""></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>Note</td>
+              <td>
+                <textarea name="note" placeholder=""></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="clearfix text-right">
+        <input routerLink="/checkout/finnish" routerLinkActive="active" type="submit" class="btn-global btn-check-2" value="Proses"/>
+      </div>
+    </form>
+  </div>
+</section>

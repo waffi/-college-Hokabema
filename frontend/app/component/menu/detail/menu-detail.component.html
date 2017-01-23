@@ -1,0 +1,95 @@
+<section id="title-cont">
+  <div class="clearfix rope">
+    <div class="rope">
+      <img src="./assets/img/rope.png" />
+    </div>
+  </div>
+  <div class="title-cont">
+    <p>Menu</p>
+  </div>
+</section>
+
+<section id="content">
+
+  <div class="fluid900" *ngIf="menu">
+    <div class="clearfix marbot-30"><a href="back" (click)="goBack()">&laquo; Back to Menu</a></div>
+
+    <!-- BEGIN Inner Menu -->
+    <div class="clearfix">
+      <div class="left grid-2 text-center" id="image_142">
+        <img src={{menu.image}} />
+        <h3>{{menu.name}}</h3>
+      </div>
+      <div class="left grid-22">
+        <div class="clearfix tablelist">
+          <div class="left tab-left">
+            <h3>Contains</h3>
+          </div>
+          <div class="left tab-right">
+            <p>
+              <img src="./assets/img/reff/1515f-sapi.png" class="tooltip" title="Beef" />
+              <img src="./assets/img/reff/e285a-ayam.png" class="tooltip" title="Chicken" />
+              <img src="./assets/img/reff/a3fd0-kepiting.png" class="tooltip" title="Crab" />
+              <img src="./assets/img/reff/de367-udang.png" class="tooltip" title="Shrimp">
+            </p>
+          </div>
+        </div>
+        <div class="clearfix tablelist">
+          <div class="left tab-left">
+            <h3>Description</h3>
+          </div>
+          <div class="left tab-right">
+            <p>{{menu.description}}</p>
+          </div>
+        </div>
+        <div class="clearfix tablelist">
+          <div class="left tab-left">
+            <h3>Price<em> (include tax)</em></h3>
+          </div>
+          <div class="left tab-right">
+            <p>Rp {{menu.price}}
+              <input type="submit" class="input-pesan marleft-10" value="Order" (click)="addToOrder(menu)"/></p>
+            </div>
+          </div>
+          <div class="clearfix tablelist">
+            <div class="left tab-left">
+              <h3>Nutrition Fact</h3>
+            </div>
+            <div class="left tab-right text-center">
+              <!-- <p class="clearfix"> -->
+              <div class="left nutrition-icon">
+                <p><img src="./assets/img/nutrition/calories.png" /></p>
+                <p>Calories</p>
+                <p class="red">{{menu.calories}} kkal</p>
+              </div>
+              <div class="left nutrition-icon">
+                <p><img src="./assets/img/nutrition/protein.png" /></p>
+                <p>Protein</p>
+                <p class="red">{{menu.protein}} g</p>
+              </div>
+              <div class="left nutrition-icon">
+                <p><img src="./assets/img/nutrition/fat.png" /></p>
+                <p>Fat</p>
+                <p class="red">{{menu.fat}} g</p>
+              </div>
+              <div class="left nutrition-icon">
+                <p><img src="./assets/img/nutrition/carbs.png" /></p>
+                <p>Carbohydrate</p>
+                <p class="red">{{menu.carbohydrate}} g</p>
+              </div>
+              <div class="left nutrition-icon">
+                <p><img src="./assets/img/nutrition/natrium.png" /></p>
+                <p>Natrium</p>
+                <p class="red">{{menu.natrium}}  mg</p>
+              </div>
+              <!-- </p> -->
+            </div>
+          </div>
+        </div>
+      </div><!-- END Inner Menu -->
+
+    </div>
+  </section>
+<div *ngIf="jsonMenu">
+  {{jsonMenu}}
+</div>

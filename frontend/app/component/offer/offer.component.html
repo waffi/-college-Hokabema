@@ -1,0 +1,29 @@
+<section id="title-cont">
+  <div class="clearfix rope">
+    <div class="rope">
+      <img src="assets/img/rope.png" />
+    </div>
+  </div>
+  <div class="title-cont">
+    <p>Special Offer</p>
+  </div>
+</section>
+
+<section id="content">
+
+  <!-- Content -->
+  <div class="fluid1000 borderradius">
+
+
+    <div class="clearfix marbot-30" *ngIf="jsonBerita">
+      <div *ngFor="let offer of jsonBerita.results" class="left grid-3 text-center">
+        <a [routerLink]="['/offer/detail', offer.deskripsi]">
+          <img src={{offer.gambar}}/></a>
+          <!-- <img src={{offer.gambar}}/> -->
+          <h3>{{offer.deskripsi}}</h3>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
